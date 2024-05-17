@@ -1,0 +1,65 @@
+---
+layout: default
+title:  "PDF Parser"
+date:   2024-05-04 15:07:10 -0400
+categories: ChatGPT Parser
+---
+
+## App 
+As the number of applicants for jobs increase every year, it becomes more difficult to quickly and accurately hire the right person for the job. Using ChatGPT, Python, Pinecone, and Azure services the task of narrowing the pool can be done efficiently and more importanly, accurately.
+
+
+### How the app works 
+
+1. The PDF resume is uploaded to Azure Blob Storage.
+2. An Azure Function is triggered by the file upload, extracts the text from the PDF using PyPDF2, and passes the text to ChatGPT.
+3. GPT processes the text following the examples given in the prompt, summarizes it, and converts it to the defined JSON format.  
+4. The JSON document is vectorized using OpenAI's text-embedding-small-003 and stored in the Pinecone database. 
+
+![Architecture](/images/resumearch.jpeg)
+
+
+## Prompt
+{% highlight JSON %}
+
+"role": "system",
+"content": """
+You are an AI assistant helping summarize resumes, designed to output JSON. You accurately summarize the resume into JSON format using the following as a guide. 
+{
+"general_info": {
+    "name": "John Doe",
+    "address": "123 Main St, Anytown, USA",
+    "phone": "(123) 456-7890",
+    "email": "johndoe@example.com"
+    }
+"work_history": [
+    {
+    "position": "Software Engineer",
+    "company_name": "Company A",
+    "start_date": "2015-06-01",
+    "end_date": "2019-05-31"
+    }
+],
+"experience": [
+    {
+    "role": "Software Engineer",
+    "description": "Developed web applications",
+    "organization": "Company A"
+    }
+]
+
+"skills": [
+    {
+    "skill_name": "Python",
+    "skill_level": "Expert"
+    }
+]
+}
+
+{% endhighlight %}
+
+
+    Using GPT effectively for this project took a bit of prompt engineering. Above is a section of the system prompt I use for this project. Even if you use the JSON response feature with OpenAI's API, there is no gauruntee of consistency with the outputs. To solve this, apply the 'Few Shot' meathod of prompt engineering. By providing multiple examples following the same structure, the outputs are drastically more consistent. 
+
+## Future Implementation
+- A Web App front end
