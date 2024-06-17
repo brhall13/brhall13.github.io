@@ -45,7 +45,7 @@ def filter_list(word_dict):
 ```
 
 ## Calculation
-Now that my code sucsessfully iterates through as the paper indicated, it's time to calculate. I adjusted the (shockingly simple) formula for Python and began testing the data. The formula takes the number of rounds (listed here as session) as well as the current amount of distinct elements on the chopping block (listed here as len(word_dict)).
+Now that my code successfully iterates through as the paper indicated, it's time to calculate. I adjusted the (shockingly simple) formula for Python and began testing the data. The formula takes the number of rounds (listed here as session) as well as the current amount of distinct elements on the chopping block (listed here as len(word_dict)).
 
 ```
 return len(word_dict)/(1/(pow(2,session)))

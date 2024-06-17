@@ -6,7 +6,7 @@ categories: ChatGPT Parser
 ---
 
 ## App 
-As the number of applicants for jobs increase every year, it becomes more difficult to quickly and accurately hire the right person for the job. Using ChatGPT, Python, Pinecone, and Azure services the task of narrowing the pool can be done efficiently and more importanly, accurately.
+As the number of applicants for jobs increase every year, it becomes more difficult to quickly and accurately hire the right person for the job. Using ChatGPT, Python, Pinecone, and Azure services the task of narrowing the pool can be done efficiently and more importantly, accurately.
 
 
 ### How the app works 
@@ -20,8 +20,7 @@ As the number of applicants for jobs increase every year, it becomes more diffic
 
 
 ## Prompt
-{% highlight JSON %}
-
+``` JSON
 "role": "system",
 "content": """
 You are an AI assistant helping summarize resumes, designed to output JSON. You accurately summarize the resume into JSON format using the following as a guide. 
@@ -55,11 +54,10 @@ You are an AI assistant helping summarize resumes, designed to output JSON. You 
     }
 ]
 }
+```
 
-{% endhighlight %}
 
-
-    Using GPT effectively for this project took a bit of prompt engineering. Above is a section of the system prompt I use for this project. Even if you use the JSON response feature with OpenAI's API, there is no gauruntee of consistency with the outputs. To solve this, apply the 'Few Shot' meathod of prompt engineering. By providing multiple examples following the same structure, the outputs are drastically more consistent. 
+Using GPT effectively for this project took a bit of prompt engineering. Above is a section of the system prompt I use for this project. Even if you use the JSON response feature with OpenAI's API, there is no guarantee of consistency with the outputs. To solve this, apply the 'Few Shot' method of prompt engineering. By providing multiple examples following the same structure, the outputs are drastically more consistent. 
 
 ## Future Implementation
 - A Web App front end

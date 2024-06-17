@@ -1,2 +1,3 @@
-[Resume Processor](resumeai.md)
-[Counting With Coins](counting-with-coins.md)
+{% for post in site.posts limit 6 %}
+<a href="{{ post.url }}">{{ post.title }}</a>
+{% endfor %}
