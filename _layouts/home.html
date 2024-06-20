@@ -2,6 +2,25 @@
 layout: default
 ---
 
+<style>
+  .post-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 49%;
+    margin-right: 1%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .post-box {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -11,9 +30,9 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
+    <div class="post-list">
       {%- for post in site.posts -%}
-      <li>
+      <div class="post-box">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
@@ -24,11 +43,9 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
-      </li>
+      </div>
       {%- endfor -%}
-    </ul>
-
-
+    </div>
   {%- endif -%}
 
 </div>
