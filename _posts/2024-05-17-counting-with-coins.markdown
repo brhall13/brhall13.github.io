@@ -3,6 +3,7 @@ layout: default
 title:  "Counting with Coin Flips"
 date:   2024-05-04 15:07:10 -0400
 categories: BC
+excerpt: Recently, I read an article about how to count large numbers using limited...
 ---
 
 ## Introduction

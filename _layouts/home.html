@@ -43,6 +43,11 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
+        <div class="highlight" style="padding-top: 6px; background: #f2f2f2">
+            <div class="mo" style="color: #207c7c; " >
+              {{ post.tags | join: ", " | prepend: "Tags: "}}
+            </div>
+        </div>
       </div>
       {%- endfor -%}
     </div>

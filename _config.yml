@@ -18,14 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Braden's Blog
+title: Braden Hall
 email: brhusa@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Learning to code, one blog post at a time.
+  Working with AI and its applications.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  brhall13
+show_excerpts: true
+tags: Azure
 
 # Build settings
 remote_theme: pages-themes/slate@v0.2.0
