@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Streamlining Transcription with Azure and OpenAI"
-date:   2024-08-15 15:07:10 -0400
+date:   2024-10-15 15:07:10 -0400
 categories: ChatGPT Parser
 excerpt: One of the key areas where technology...
 tag: LLM
